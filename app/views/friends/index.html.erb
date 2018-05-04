@@ -1,0 +1,9 @@
+<h1>Friends#index</h1>
+<p>Find me in app/views/friends/index.html.erb</p>
+<% if @friends.nil? %>
+<% @friends.each do |f| %>
+ Friend
+<% end %>
+<% else %>
+No friends
+<% end %>
