@@ -4,7 +4,7 @@ class Friendship < ApplicationRecord
 
   belongs_to :user
   belongs_to :friend, class_name: 'User'
-  
+
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<% if current_user.id != @user.id %>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -21,6 +21,10 @@
 </p>
 <% logger.debug " #{@user.id} current user" %>
 <%= link_to 'Add Friend', friend_requests_path(friend_id: @user.id), method: :post %>
+
+<% else %>
+This is you
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
